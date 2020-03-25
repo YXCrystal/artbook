@@ -21,6 +21,10 @@
     padding-bottom: 2rem;
 }
 
+.small-padding-top {
+    padding-top: 1.5rem;
+}
+
 /* --- Margin --- */
 .large-margin-right {
     margin-right: 6rem;
@@ -50,3 +54,16 @@
     padding: 0;
 }
 
+/* --- Buttons --- */
+
+.form_btn {
+    background-color: $dark-purple;
+    color: white;
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+    font-size: $small-font;
+
+    &:hover {
+        background-color: $deep-purple;
+    }
+}
