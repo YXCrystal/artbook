@@ -33,6 +33,9 @@
 .small-margin-right {
     margin-right: 2rem;
 }
+.medium-margin-right {
+    margin-right: 3rem;
+}
 .large-margin-right {
     margin-right: 6rem;
 }
@@ -80,5 +83,21 @@
 
     &:hover {
         background-color: $deep-purple;
+    }
+}
+
+.icon {
+
+    &_btn{
+        padding: 0;
+        background-color: $medium-purple;
+        border: none;
+        position: absolute;
+        margin: 0.5rem;
+    }
+
+    &_search {
+        font-size: $medium-font;
+        padding: 0;
     }
 }
