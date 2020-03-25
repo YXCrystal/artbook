@@ -1,5 +1,20 @@
-%h1 Welcome to Artbook
-%h1 Connect with artists around the world on Artbook
-%h2 See artwork from friends on your Artist Feed.
-%h2 Share your artwork and life updates on your Timeline.
-%h2 Be inspired with Artbook Search.
+.row
+    .col-md-6
+        %h1{:class => "primary"} Connect with artists around the world on Artbook.
+        %hr{:class => 'small-padding-bottom'}
+        .information
+            %i{:class => "far fa-images"}
+            %h3{:class => "tertiary tertiary__info"} See art photos and posts from friends.
+        .information
+            %i{:class => "fas fa-share-square"}
+            %h3{:class => "tertiary tertiary__info"} Share your artwork on your Timeline.
+        .information
+            %i{:class => "far fa-laugh-beam"}
+            %h3{:class => "tertiary tertiary__info"} Find inspiration with Artbook Search.
+    .col-md-6
+        %h1{:class => "primary"} Sign Up
+        = form_for(:user, :url => new_user_registration_path) do |f|
+            .row 
+                .col
+                    =f.text_field :name
+                .col 
