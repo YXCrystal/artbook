@@ -1,0 +1,19 @@
+= content_for :users_navbar do
+    %nav{:class => "navbar navbar-expand-sm no-padding"}
+        .container
+            %a{:class => "navbar-brand medium-font", :href => "/"}
+                Artbook
+            %ul{:class => "navbar-nav mr-auto"}
+                =form_for('/') do |f|
+                    %li{:class => "small-margin-right"}
+                        =f.text_field :name, class: 'nav-field'
+                        =f.submit :Search, class: 'navbar-btn'
+                %li{:class => "nav-item"}
+                    =link_to current_user.first_name, '/', class: 'nav-link'
+                %li{:class => "nav-item"}
+                    =link_to "Home", users_path, class: 'nav-link'
+                %li{:class => "nav-item"}
+                    =link_to "Find Artists", users_path, class: 'nav-link'                         
+
+ 
+=render :template => "layouts/application.html.erb"
