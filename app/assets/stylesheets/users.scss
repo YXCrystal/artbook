@@ -15,9 +15,22 @@
 }
 
 .nav-field {
-    width: 30rem;
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
     margin-top: 0.3rem;
 }
+
+@media screen and (min-width: 580px) {
+    .nav-field {
+        width: 10rem;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    .nav-field {
+        width: 30rem;
+    }
+}
+
