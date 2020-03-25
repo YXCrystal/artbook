@@ -21,6 +21,11 @@
     padding-bottom: 2rem;
 }
 
+/* --- Margin --- */
+.large-margin-right {
+    margin-right: 6rem;
+}
+
 /* --- Text --- */
 .primary {
     color: $dark-purple;
@@ -29,14 +34,13 @@
 
 .tertiary {
     color: $light-grey;
-    font-size: 1.5rem;
+    font-size: $small-font;
     margin-bottom: 3rem;
 
     &__info {
         padding-top: 0.5rem;
     }
 }
-
 
 .navbar {
     background-color: $medium-purple;

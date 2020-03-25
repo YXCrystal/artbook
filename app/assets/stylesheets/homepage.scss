@@ -45,10 +45,27 @@
     }
 }
 
-
 i {
     font-size: 3rem;
     float: left;
     padding-right: 1rem;
     color: $deep-purple;
+}
+
+.signup {
+
+    &_field {
+    width: 100%;
+    font-size: $small-font;
+    color: $light-grey;
+    }
+
+    &_row {
+        margin-bottom: 1rem;
+    }
+
+    &_label {
+        font-size: $small-font;
+        color: $deep-purple;
+    }
 }
