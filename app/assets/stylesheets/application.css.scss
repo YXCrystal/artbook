@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ 
+@import "utilities/variables";
+ 
+/* --- Padding --- */
+.small-padding-bottom {
+    padding-bottom: 2rem;
+}
+
+/* --- Text --- */
+.primary {
+    color: $dark-purple;
+    font-weight: bold;
+}
+
+.tertiary {
+    color: $light-grey;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+
+    &__info {
+        padding-top: 0.5rem;
+    }
+}
+
+
+.navbar {
+    background-color: $medium-purple;
+}
+
+.container {
+    padding: 0;
+}
+

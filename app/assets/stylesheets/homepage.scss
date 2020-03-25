@@ -1,3 +1,54 @@
 // Place all the styles related to the Homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "utilities/variables";
+
+.navbar-brand {
+    font-size: 3rem;
+    color: white;
+
+    &:active, &:hover {
+        color: white;
+    }
+}
+.navbar-item {
+    color: white;
+    display: inline-block;
+
+}
+
+.navbar-field {
+    width: 10rem;
+    margin-right: 1rem;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.navbar-label {
+    font-size: 1.2rem;
+    display: block;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.navbar-btn {
+    color: white;
+    padding: 0.3rem 0.8rem;
+    line-height: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: $dark-purple;
+    
+    &:hover {
+        background-color: $deep-purple;
+    }
+}
+
+
+i {
+    font-size: 3rem;
+    float: left;
+    padding-right: 1rem;
+    color: $deep-purple;
+}
