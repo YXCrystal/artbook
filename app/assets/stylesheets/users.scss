@@ -5,6 +5,11 @@
 @import 'utilities/variables';
 
 /* --- User Navbar --- */
+.nav-item {
+    white-space: nowrap;
+    border-right: 1px solid $dark-purple;
+}
+
 .nav-link {
     color: white;
     font-size: $small-font;
@@ -15,15 +20,16 @@
 }
 
 .nav-field {
+    width: 8rem;
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
     margin-top: 0.3rem;
 }
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 760px) {
     .nav-field {
-        width: 10rem;
+        width: 15rem;
     }
 
 }
