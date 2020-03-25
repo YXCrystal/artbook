@@ -1,5 +1,5 @@
 .row
-    .col-md-6
+    .col-md-6.large-margin-right
         %h1{:class => "primary"} Connect with artists around the world on Artbook.
         %hr{:class => 'small-padding-bottom'}
         .information
@@ -11,10 +11,24 @@
         .information
             %i{:class => "far fa-laugh-beam"}
             %h3{:class => "tertiary tertiary__info"} Find inspiration with Artbook Search.
-    .col-md-6
-        %h1{:class => "primary"} Sign Up
-        = form_for(:user, :url => new_user_registration_path) do |f|
-            .row 
+    .col-md-5
+        %h1{:class => "primary small-padding-bottom"} Sign Up
+        = form_for(:user, :url => user_registration_path) do |f|
+            .row.signup_row 
                 .col
-                    =f.text_field :name
+                    =f.text_field :first_name, required: true, placeholder: "First Name", class: "signup_field"
                 .col 
+                    =f.text_field :last_name, required: true, placeholder: "Last Name", class: "signup_field"
+            .row.signup_row  
+                .col 
+                    =f.email_field :email, required: true, placeholder: "Email", class: "signup_field"
+            .row.signup_row  
+                .col 
+                    =f.password_field :password, required: true, placeholder: "New password", class: "signup_field"
+            .row.signup_row 
+                .col 
+                    =f.label :birthday, class: "signup_label"
+                    =f.date_field :birthday, max: Date.today, required: true, class: "signup_field"
+            .row.signup_row 
+                .col 
+                    =f.submit "Sign Up"
