@@ -5,9 +5,11 @@
                 Artbook
             %ul{:class => "navbar-nav mr-auto"}
                 =form_for('/') do |f|
-                    %li{:class => "small-margin-right"}
+                    %li{:class => "medium-margin-right"}
                         =f.text_field :name, class: 'nav-field'
-                        =f.submit :Search, class: 'navbar-btn'
+                        =f.button :submit, class: 'icon_btn' do
+                            %i{:class => "fas fa-search icon_search"}
+                
                 %li{:class => "nav-item"}
                     =link_to current_user.first_name, '/', class: 'nav-link'
                 %li{:class => "nav-item"}
