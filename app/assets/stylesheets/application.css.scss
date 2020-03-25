@@ -17,6 +17,10 @@
 @import "utilities/variables";
  
 /* --- Padding --- */
+.no-padding {
+    padding: 0;
+}
+
 .small-padding-bottom {
     padding-bottom: 2rem;
 }
@@ -26,11 +30,22 @@
 }
 
 /* --- Margin --- */
+.small-margin-right {
+    margin-right: 2rem;
+}
 .large-margin-right {
     margin-right: 6rem;
 }
 
 /* --- Text --- */
+.small-font {
+    font-size: $small-font
+}
+
+.medium-font {
+    font-size: $medium-font
+}
+
 .primary {
     color: $dark-purple;
     font-weight: bold;
