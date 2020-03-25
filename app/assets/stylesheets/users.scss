@@ -7,7 +7,7 @@
 /* --- User Navbar --- */
 .nav-item {
     white-space: nowrap;
-    border-right: 1px solid $dark-purple;
+    padding: 0;
 }
 
 .nav-link {
@@ -30,6 +30,10 @@
 @media screen and (min-width: 760px) {
     .nav-field {
         width: 15rem;
+        
+    }
+    .nav-link {
+        border-right: 1px solid $dark-purple;
     }
 
 }
