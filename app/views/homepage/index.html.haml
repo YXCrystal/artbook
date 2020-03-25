@@ -25,10 +25,10 @@
             .row.signup_row  
                 .col 
                     =f.password_field :password, required: true, placeholder: "New password", class: "signup_field"
-            .row.signup_row 
-                .col 
+            .row.signup_row
+                .col
                     =f.label :birthday, class: "signup_label"
                     =f.date_field :birthday, max: Date.today, required: true, class: "signup_field"
-            .row.signup_row 
+            .row.signup_row.small-padding-top
                 .col 
-                    =f.submit "Sign Up"
+                    =f.submit "Sign Up", class: "form_btn"
