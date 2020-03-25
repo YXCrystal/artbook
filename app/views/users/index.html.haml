@@ -1,3 +1,12 @@
 .feed_content
     %p{:class => "tertiary"} Create Post
+    = render 'posts/form'
+
+.feed_content
+    .feed_content--user
+        %p #{current_user.first_name} #{current_user.last_name}
+    .feed_content--post
+        - @posts.each do |p|
+            = time_ago_in_words(p.created_at)
+            = p.body
    
