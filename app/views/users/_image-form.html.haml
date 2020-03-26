@@ -1,0 +1,6 @@
+.profile_banner_title
+    %h2 Editing Profile
+.profile_banner_upload
+    =form_for(@user) do |f|
+        =f.file_field :banner
+        =f.submit "Save changes", class: 'btn profile_banner_upload--btn'

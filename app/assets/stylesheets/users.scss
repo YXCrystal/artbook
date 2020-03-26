@@ -55,6 +55,28 @@
     border-radius: 0.5rem;
     position: relative;
 
+    &_title {
+        color: white;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0.8;
+        padding: 0.3rem;
+        text-align: center;
+    }
+
+    &_upload {
+        color: white;
+        z-index: 1;
+
+        &--btn {
+            color: white;
+            background-color: $medium-purple;
+            display: block;
+            padding: 0.3rem 2.1rem;
+            margin-top: 0.5rem;
+        }
+
+    }
 
     &_heading {
         background-color: white;

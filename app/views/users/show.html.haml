@@ -1,11 +1,2 @@
 .profile_banner
-    .profile_banner_heading
-        .col-md-5.profile_picture
-        .col-md-2.profile_column
-            =link_to "Timeline", '/', class: "profile_column--links"
-        .col-md-2.profile_column
-            =link_to "About", '/', class: "profile_column--links"
-        .col-md-2.profile_column
-            =link_to "Friends", '/', class: "profile_column--links"
-        .col-md-2.profile_column
-            =link_to "Photos", '/', class: "profile_column--links"
+    = render 'profile-banner'
