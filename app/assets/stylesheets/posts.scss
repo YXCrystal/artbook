@@ -29,4 +29,31 @@
 .post_btn {
     color: white;
     background-color: $medium_purple;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.post_upload {
+    display: inline-block;
+    margin-left: 5rem;
+
+        &--icon {
+        
+        }
+
+        &--image {
+            color: $medium_purple;
+            font-size: 1.1rem;
+            margin-top: 0.4rem;
+        }
+}
+
+.post_image {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .post_upload {
+        margin-left: 2rem;
+    }
 }
