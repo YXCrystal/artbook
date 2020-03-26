@@ -15,8 +15,11 @@
     <%= yield :homepage_navbar %>
     <%= yield :users_navbar %>
     <div class="container-lg">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% elsif alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
       <%= yield %>
     </div>
   </body>

@@ -44,3 +44,55 @@
     }
 }
 
+/* --- User profile page --- */
+.profile_banner {
+    border: 1px solid $lightest-grey;
+    background-image: url('clouds.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 25rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+
+
+    &_heading {
+        background-color: white;
+        height: 2.5rem;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        display: flex;
+    }
+}
+
+.profile_column {
+    border-right: 1px solid $lightest-grey;
+    text-align: center;
+    flex: 0 0 12.6%;
+    padding: 0.2rem;
+    
+    &--links {
+        color: $dark-purple;
+        font-size: 1.3rem;
+
+        &:hover {
+            text-decoration: none;
+            color: $deep-purple;
+        }
+    }
+}
+
+.profile_picture {
+    background-color: pink;
+    width: 10rem;
+    height: 10rem;
+    bottom: 8rem;
+    border-radius: 50%;
+    margin-left: 2rem;
+    position: relative;
+    flex: none;
+    
+}
