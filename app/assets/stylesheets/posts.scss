@@ -5,10 +5,28 @@
 @import 'utilities/variables';
 
 .post_body {
-    width: 80%;
+    width: 100%;
     padding: 0.5rem;
+    border: none;
 }
 
-.card-subtitle {
-    color: $light_grey;
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.post_form {
+    text-align: center;
+    width: 100%;
+}
+
+.post_title {
+    color: white;
+    padding: 0.3rem 0.5rem;
+    background-color: $medium_purple;
+}
+
+.post_btn {
+    color: white;
+    background-color: $medium_purple;
 }

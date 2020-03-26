@@ -1,13 +1,36 @@
-.card
-    .card-body
-        %p{:class => "tertiary"} Create Post
-        = render 'posts/form'
-
-- @posts.each do |p|
-    .card
-        .card-body
-            %h5{:class => "card-title"} #{current_user.first_name} #{current_user.last_name}
-            %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)}
-            .card-text
-                = p.body
+-# .row 
+-#     .col-4
+-#         .card
+-#             .card-body
+-#                 %p{:class => "tertiary"} Create Post
+-#                 = render 'posts/form'
+-#     - @posts.each do |p|
+-#         .col-4
+-#             .card
+-#                 .card-body
+-#                     %h5{:class => "card-title"} #{current_user.first_name} #{current_user.last_name}
+-#                     %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)}
+-#                     .card-text
+-#                         = p.body
    
+
+.row 
+    .col-3
+        .card
+            .card-body 
+                %h1 Some text here 
+    .col-6
+        .card
+            %h3{:class => "post_title"} Create Post
+            = render 'posts/form'
+        - @posts.each do |p|
+            .card
+                .card-body
+                    %h5{:class => "card-title"} #{current_user.first_name} #{current_user.last_name}
+                    %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)}
+                    .card-text
+                        = p.body
+    .col-3
+        .card
+            .card-body 
+                %h1 Some other text

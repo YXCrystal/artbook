@@ -1,4 +1,6 @@
-= form_for([current_user, @post]) do |f|
-    =f.hidden_field :user_id, value: current_user.id
-    =f.text_area :body, rows: "5", placeholder: "What would you like to share?", class: 'post_body'
-    %p=f.submit :Post, class: 'btn btn-primary'
+.post_form
+    = form_for([current_user, @post]) do |f|
+        =f.hidden_field :user_id, value: current_user.id
+        =f.text_area :body, rows: "5", placeholder: "What would you like to share?", class: 'post_body'
+        %hr
+        %p=f.submit :Post, class: 'btn post_btn'
