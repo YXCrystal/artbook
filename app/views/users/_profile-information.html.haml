@@ -1,7 +1,17 @@
-.profile_information
-    .col-md-6
+.profile_info.small-margin-top
+    .col-md-4.profile_info--column
         .card
+            .card-body.profile_info--bio
+                %p #{@user.bio}
+                %hr
+                %i{:class => "fas fa-birthday-cake icon_bio"}
+                %p #{@user.birthday.strftime("%B %d, %Y")}
+                %i{:class => "fas fa-compass icon_bio"}
+                %p #{@user.location}
+                %i{:class => "fas fa-link icon_bio"}
+                =link_to @user.site, "http://#{@user.site}", class: "link_bio"
+    .col-md-8
+        .card.small-margin-bottom
             .card-body
-                %h1 Hello
-    .col-md-6
-        %h2 Post stuff
+                =render 'posts/form'
+        =render 'posts/posts'
