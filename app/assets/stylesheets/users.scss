@@ -44,7 +44,8 @@
     }
 }
 
-/* --- User profile page --- */
+/* --- User profile page (Banner) --- */
+
 .profile_banner {
     border: 1px solid $lightest-grey;
     background-position: center;
@@ -91,7 +92,15 @@
     }
 }
 
-.profile_column {
+.banner_label {
+    font-size: $small-font;
+    text-shadow: 1px 1px 3px rgba($deep-purple, 0.8);
+    margin-bottom: 0;
+}
+
+/* --- User profile page (Banner Heading) --- */
+
+.heading_column {
     border-right: 1px solid $lightest-grey;
     text-align: center;
     flex: 0 0 12.6%;
@@ -106,12 +115,6 @@
             color: $deep-purple;
         }
     }
-}
-
-.profile_label {
-    font-size: $small-font;
-    text-shadow: 1px 1px 3px rgba($deep-purple, 0.8);
-    margin-bottom: 0;
 }
 
 .profile_picture {
@@ -134,6 +137,17 @@
     
 }
 
-.profile_information {
+/* --- User profile page (Profile Information) --- */
+
+.profile_info {
     display: flex;
+
+    &--bio {
+        color: $light-grey;
+    }
+
+    &--column {
+        padding: 0;
+        margin-right: 1rem;
+    }
 }

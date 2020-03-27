@@ -98,11 +98,17 @@
 
     &--small {
         padding: 0.2rem 1rem;
+        font-size: 1.3rem;
+        margin: 0.5rem;
         white-space: nowrap;
     }
 }
 
 .icon {
+
+    &_bio {
+        font-size: $small-font;
+    }
 
     &_btn{
         padding: 0;
@@ -116,4 +122,20 @@
         font-size: $medium-font;
         padding: 0;
     }
+}
+
+/* --- Links --- */ 
+.link {
+
+    &_bio {
+        color: $light-grey;
+
+        &:hover {
+            text-decoration: none;
+            color: $dark-grey;
+        }
+    }
+
+    
+    
 }
