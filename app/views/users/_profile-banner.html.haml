@@ -1,5 +1,5 @@
 .profile_banner_heading
-    .col-md-5.profile_picture
+    .col-md-5.profile_picture{:style => "background-image: url(#{@user.avatar.url})"}
     .col-md-2.profile_column
         =link_to "Timeline", '/', class: "profile_column--links"
     .col-md-2.profile_column

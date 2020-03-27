@@ -1,7 +1,11 @@
 .profile_banner_title
     %h2 Editing Profile
-.profile_banner_upload
-    =form_for(@user) do |f|
-        =f.file_field :banner
-        =f.text_field :first_name
-        =f.submit "Save changes", class: 'btn profile_banner_upload--btn'
+
+=form_for(@user) do |f|
+    .profile_picture_upload
+        =f.label :avatar, class: 'profile_label'
+        %p=f.file_field :avatar
+    .profile_banner_upload
+        =f.label :banner, class: 'profile_label'
+        %p=f.file_field :banner
+    =f.submit "Save changes", class: 'btn profile_banner_upload--btn'

@@ -57,7 +57,8 @@
     &_title {
         color: white;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba($deep-purple, 0.7
+        );
         opacity: 0.8;
         padding: 0.3rem;
         text-align: center;
@@ -65,7 +66,8 @@
 
     &_upload {
         color: white;
-        z-index: 1;
+        text-shadow: 1px 1px 3px rgba($deep-purple, 0.8);
+        margin-left: 0.5rem;
 
         &--btn {
             color: white;
@@ -106,6 +108,12 @@
     }
 }
 
+.profile_label {
+    font-size: $small-font;
+    text-shadow: 1px 1px 3px rgba($deep-purple, 0.8);
+    margin-bottom: 0;
+}
+
 .profile_picture {
     background-image: url("default-profile.jpg");
     background-position: center;
@@ -117,5 +125,11 @@
     margin-left: 2rem;
     position: relative;
     flex: none;
+
+    &_upload {
+        color: white;
+        position: absolute;
+        transform: translate(12.5rem, 14rem);
+    }
     
 }
