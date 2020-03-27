@@ -107,7 +107,15 @@
 .icon {
 
     &_bio {
+        font-size: $small-font
+    }
+
+    &_small {
+        color: white;
         font-size: $small-font;
+        margin-right: 0.2rem;
+        padding: 0;
+        
     }
 
     &_btn{

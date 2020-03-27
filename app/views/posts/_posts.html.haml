@@ -1,9 +1,25 @@
 - @posts.each do |p|
     .card.small-margin-bottom
         .card-body
-            %h5{:class => "card-title"} #{current_user.first_name} #{current_user.last_name}
-            %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)}
-            .card-text
-                = p.body
-                - if p.image?
-                    =image_tag p.image.url(:large), class: "post_image"
+            .post_user
+                =image_tag @user.avatar.url, class: "post_user--avatar"
+                .post_user--details
+                    %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}
+                    
+                    %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)} ago
+            %hr
+            = p.body
+        .card-text
+            - if p.image?
+                =image_tag p.image.url(:large), class: "post_image"
+        .card-body.post_response
+            .col-2.post_response--btn
+                %i{:class => "far fa-thumbs-up icon_small"} 
+                %p{:class => "post_response--text"} Like
+            .col-3.post_response--btn
+                %i{:class => "far fa-comment icon_small"} 
+                %p{:class => "post_response--text"} Comment
+            .col-2.post_response--btn
+                %i{:class => "far fa-share-square icon_small"} 
+                %p{:class => "post_response--text"} Share
+            
