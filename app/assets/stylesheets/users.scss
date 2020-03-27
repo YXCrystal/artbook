@@ -47,7 +47,6 @@
 /* --- User profile page --- */
 .profile_banner {
     border: 1px solid $lightest-grey;
-    background-image: url('clouds.jpg');
     background-position: center;
     background-size: cover;
     height: 25rem;
@@ -108,7 +107,9 @@
 }
 
 .profile_picture {
-    background-color: pink;
+    background-image: url("default-profile.jpg");
+    background-position: center;
+    background-size: cover;
     width: 10rem;
     height: 10rem;
     bottom: 8rem;

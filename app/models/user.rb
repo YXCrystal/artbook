@@ -6,9 +6,9 @@ class User < ApplicationRecord
   
   has_many :posts
 
-  has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/default-profile.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-  has_attached_file :banner, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/clouds.jpg"
+  has_attached_file :banner, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/beach.jpg"
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\z/
 end
