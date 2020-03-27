@@ -3,4 +3,5 @@
 .profile_banner_upload
     =form_for(@user) do |f|
         =f.file_field :banner
+        =f.text_field :first_name
         =f.submit "Save changes", class: 'btn profile_banner_upload--btn'
