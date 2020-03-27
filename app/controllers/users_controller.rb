@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:index, :show, :edit, :update]
+    before_action :find_user, only: [:index, :show, :edit_header, :update]
     def index
         @user = User.find_by(id: current_user)
         @post = Post.new
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     def show 
     end
     
-    def edit
+    def edit_header
     end
 
     private

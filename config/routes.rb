@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :profile, controller: "users", as: "users" do
-    resources :posts, only: [:new, :create, :show]
+  resources :profile, controller: "users", as: "users" do 
+    member do 
+      get "edit_header"
+    end
+
+    resources :posts, only: [:new, :create, :show]  
   end
 
   authenticated :user do 
