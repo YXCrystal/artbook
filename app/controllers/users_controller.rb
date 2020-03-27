@@ -15,7 +15,9 @@ class UsersController < ApplicationController
         end
     end
 
-    def show 
+    def show
+        @post = Post.new
+        @posts = Post.all.where(id: current_user.id)
     end
     
     def edit_header
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :birthday, :bio, :location, :avatar, :banner)
+        params.require(:user).permit(:first_name, :last_name, :birthday, :bio, :location, :site, :avatar, :banner)
     end
 
 end
