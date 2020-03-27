@@ -81,6 +81,9 @@
 }
 
 /* --- Buttons --- */
+.btn_form {
+
+}
 
 .form_btn {
     background-color: $dark-purple;
@@ -91,6 +94,11 @@
 
     &:hover {
         background-color: $deep-purple;
+    }
+
+    &--small {
+        padding: 0.2rem 1rem;
+        white-space: nowrap;
     }
 }
 
