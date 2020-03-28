@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    
     def new
         @post = Post.new
     end
@@ -16,6 +17,19 @@ class PostsController < ApplicationController
     end
 
     def show
+        @post = Post.find(params[:id])
+    end
+    
+    def like
+        @post = Post.find(params[:id])
+        type = params[:type]
+        if type == "like"
+            current_user.likes << @post
+            redirect_to root_url, notice: "Like"
+        elsif type == "unlike"
+            current_user.likes.delete(@post)
+            redirect_to root_url, notice: "Unlike"
+        end
     end
 
     private 

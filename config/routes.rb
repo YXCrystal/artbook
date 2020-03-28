@@ -7,8 +7,13 @@ Rails.application.routes.draw do
     end
 
     resources :posts, only: [:new, :create, :show]  
+      
   end
 
+  resources :posts, only: [:show] do 
+    put "like", on: :member
+  end
+  
   authenticated :user do 
     root "users#index", as: "authenticated_root"
 
