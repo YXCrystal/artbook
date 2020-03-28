@@ -87,6 +87,11 @@
 }
 
 /* --- Post Response --- */
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
 
 .post_response {
     background-color: $dark-purple;

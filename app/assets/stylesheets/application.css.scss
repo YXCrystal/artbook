@@ -132,7 +132,8 @@
     }
 }
 
-/* --- Links --- */ 
+/* --- Links --- */
+
 .link {
 
     &_bio {
@@ -142,6 +143,12 @@
             text-decoration: none;
             color: $dark-grey;
         }
+    }
+
+    &_white {
+        color: white;
+        text-decoration: none;
+
     }
 
     
