@@ -22,13 +22,13 @@ class PostsController < ApplicationController
     
     def like
         @post = Post.find(params[:id])
-        type = params[:type]
+        type = params[:type].downcase
         if type == "like"
             current_user.likes << @post
-            redirect_to root_url, notice: "Like"
+            redirect_back(fallback_location: root_path, anchor: params[:anchor] )
         elsif type == "unlike"
             current_user.likes.delete(@post)
-            redirect_to root_url, notice: "Unlike"
+            redirect_back(fallback_location: root_path, anchor: params[:anchor] )
         end
     end
 
