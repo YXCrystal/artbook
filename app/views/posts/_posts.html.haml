@@ -16,10 +16,12 @@
             .col-2.post_response--btn
                 -if !current_user.likes.include?(p)
                     - type = "Like"
+                    - icon = "fa-thumbs-up"
                 -else 
                     - type = "Unlike"
-                =link_to(like_post_path(p, type: "#{type}", anchor: "#{p.id}"), id: "#{p.id}", class: "like", method: :put) do 
-                    %i{:class => "far fa-thumbs-up icon_small"} 
+                    - icon = "fa-thumbs-down"
+                =link_to(like_post_path(p, type: "#{type}", anchor: "#{p.id}"), id: "#{p.id}", method: :put) do 
+                    %i{:class => "far #{icon} icon_small"} 
                     %p{:class => "link_white post_response--text"} #{type}
             .col-3.post_response--btn
                 %i{:class => "far fa-comment icon_small"} 
