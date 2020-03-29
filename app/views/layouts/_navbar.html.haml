@@ -1,0 +1,17 @@
+%nav{:class => "navbar navbar-expand-sm no-padding"}
+    .container
+        %a{:class => "navbar-brand medium-font", :href => "/"}
+            Artbook
+        %ul{:class => "navbar-nav mr-auto"}
+            =form_for('/') do |f|
+                %li{:class => "medium-margin-right"}
+                    =f.text_field :name, class: 'nav-field'
+                    =f.button :submit, class: 'icon_btn' do
+                        %i{:class => "fas fa-search icon_search"}
+                
+            %li{:class => "nav-item"}
+                =link_to current_user.first_name, user_path(current_user.id), class: 'nav-link'
+            %li{:class => "nav-item"}
+                =link_to "Home", users_path, class: 'nav-link'
+            %li{:class => "nav-item"}
+                =link_to "Find Artists", users_path, class: 'nav-link'   
