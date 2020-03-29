@@ -6,12 +6,13 @@ Rails.application.routes.draw do
       get "edit_header"
     end
 
-    resources :posts, only: [:new, :create, :show]  
+    resources :posts, only: [:new, :create, :show] 
       
   end
 
   resources :posts, only: [:show] do 
     put "like", on: :member
+    resources :comments, only: [:new, :create]
   end
   
   authenticated :user do 
