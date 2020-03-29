@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     def show
         @post = Post.new
-        @posts = Post.all.where(id: current_user.id)
+        @posts = Post.all.where(user_id: current_user.id)
     end
     
     def edit_header

@@ -44,6 +44,7 @@
 
 .post_image {
     width: 100%;
+    max-height: 25rem;
 }
 
 
@@ -103,7 +104,7 @@ a {
     white-space: nowrap;
     padding: 0;
     padding-top: 0.5rem;
-    padding-right: 0.5rem;
+    padding-right: 0.8rem;
     font-size: $tiny-font;
     color: white;
     

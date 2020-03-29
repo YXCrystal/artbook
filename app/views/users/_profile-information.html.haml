@@ -12,6 +12,7 @@
                 =link_to @user.site, "http://#{@user.site}", class: "link_bio"
     .col-md-8
         .card.small-margin-bottom
-            .card-body
-                =render 'posts/form'
+            %h3{:class => "post_title"} Create Post
+            =render 'posts/form'
         =render 'posts/posts'
+        
