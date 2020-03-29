@@ -1,0 +1,20 @@
+.row.small-margin-top
+    .col-md-8
+        .card
+            .post-response
+                - if @post.image?
+                    =image_tag @post.image.url(:large), class: "post_image"
+                = render 'like'
+    
+    .col-md-4 
+        .card.small-margin-bottom
+            .card-body{:id => "#{@post.id}"}
+                .post_user
+                    =image_tag @user.avatar.url, class: "post_user--avatar"
+                .post_user--details
+                    %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}     
+                    %h6{:class => "card-subtitle"} #{time_ago_in_words(@post.created_at)} ago
+                %hr
+                = @post.body
+        
+
