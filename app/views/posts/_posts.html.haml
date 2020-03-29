@@ -1,6 +1,6 @@
 - @posts.each do |p|
     .card.small-margin-bottom
-        .card-body
+        .card-body{:id => "#{p.id}"}
             .post_user
                 =image_tag @user.avatar.url, class: "post_user--avatar"
                 .post_user--details
@@ -20,7 +20,7 @@
                 -else 
                     - type = "Unlike"
                     - icon = "fa-thumbs-down"
-                =link_to(like_post_path(p, type: "#{type}", anchor: "#{p.id}"), id: "#{p.id}", method: :put) do 
+                =link_to(like_post_path(p, type: "#{type}", anchor: "#{p.id}"), method: :put) do 
                     %i{:class => "far #{icon} icon_small"} 
                     %p{:class => "link_white post_response--text"} #{type}
             .col-3.post_response--btn

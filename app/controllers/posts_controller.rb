@@ -25,10 +25,10 @@ class PostsController < ApplicationController
         type = params[:type].downcase
         if type == "like"
             current_user.likes << @post
-            redirect_back(fallback_location: root_path, anchor: params[:anchor] )
+            redirect_back(fallback_location: root_path, anchor: "#{@post.id}" )
         elsif type == "unlike"
             current_user.likes.delete(@post)
-            redirect_back(fallback_location: root_path, anchor: params[:anchor] )
+            redirect_back(fallback_location: root_path, anchor: "#{@post.id}" )
         end
     end
 
