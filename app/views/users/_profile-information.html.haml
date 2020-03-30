@@ -2,14 +2,19 @@
     .col-md-4.profile_info--column
         .card
             .card-body.profile_info--bio
-                %p #{@user.bio}
+                - if @user.bio
+                    %p #{@user.bio}
+                - else 
+                    %p #{@user.first_name} #{@user.last_name}
                 %hr
                 %i{:class => "fas fa-birthday-cake icon_bio"}
                 %p #{@user.birthday.strftime("%B %d, %Y")}
-                %i{:class => "fas fa-compass icon_bio"}
-                %p #{@user.location}
-                %i{:class => "fas fa-link icon_bio"}
-                =link_to @user.site, "http://#{@user.site}", class: "link_bio"
+                - if @user.location
+                    %i{:class => "fas fa-compass icon_bio"}
+                    %p #{@user.location}
+                - if @user.site
+                    %i{:class => "fas fa-link icon_bio"}
+                    =link_to @user.site, "http://#{@user.site}", class: "link_bio"
                 .small-margin-top
                 =link_to "Edit Details", edit_info_user_path(@user.id), class: "form_btn form_btn--fill"
     .col-md-8
