@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do 
       get "edit_header"
       get "edit_info"
+      get "photos"
     end
 
     resources :posts, only: [:new, :create, :show] 

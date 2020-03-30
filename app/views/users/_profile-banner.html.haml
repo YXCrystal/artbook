@@ -4,10 +4,10 @@
 .profile_banner_heading
     .col-md-5.profile_picture{:style => "background-image: url(#{@user.avatar.url})"}
     .col-md-2.heading_column
-        =link_to "Timeline", '/', class: "heading_column--links"
+        =link_to "Timeline", user_path(@user.id), class: "heading_column--links"
     .col-md-2.heading_column
         =link_to "About", '/', class: "heading_column--links"
     .col-md-2.heading_column
         =link_to "Friends", '/', class: "heading_column--links"
     .col-md-2.heading_column
-        =link_to "Photos", '/', class: "heading_column--links"
+        =link_to "Photos", photos_user_path(@user.id), class: "heading_column--links"
