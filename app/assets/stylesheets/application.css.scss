@@ -22,7 +22,7 @@
 }
 
 .small-padding-left {
-    padding-left: 1.6rem;
+    padding-left: 1.4rem;
 }
 
 .small-padding-bottom {
@@ -92,14 +92,16 @@
 /* --- Buttons --- */
 
 .form_btn {
-    background-color: $dark-purple;
+    background-color: $medium-purple;
     color: white;
     padding: 0.5rem 3rem;
     border-radius: 0.5rem;
-    font-size: $small-font;
+    font-size: 1.2rem;
+    border: none;
 
     &:hover {
-        background-color: $deep-purple;
+        background-color: $dark-purple;
+        color: white;
     }
 
     &--small {

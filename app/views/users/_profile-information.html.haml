@@ -10,6 +10,8 @@
                 %p #{@user.location}
                 %i{:class => "fas fa-link icon_bio"}
                 =link_to @user.site, "http://#{@user.site}", class: "link_bio"
+                .small-margin-top
+                =link_to "Edit Details", '/', class: "form_btn"
     .col-md-8
         .card.small-margin-bottom
             %h3{:class => "post_title"} Create Post
