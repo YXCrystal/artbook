@@ -59,10 +59,14 @@
     margin-bottom: 2rem;
 }
 
+.small-line {
+    margin: 0;
+}
 
 /* --- Text --- */
 .small-font {
-    font-size: $small-font
+    font-size: 1.2rem;
+    color: $light-grey;
 }
 
 .medium-font {
@@ -131,7 +135,8 @@
 .icon {
 
     &_bio {
-        font-size: $small-font
+        font-size: $small-font;
+        padding-right: 0.5rem;
     }
 
     &_small {

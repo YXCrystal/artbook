@@ -1,3 +1,22 @@
+- if @post.liked_by.length > 0 && @post.comments.length > 0
+    .row.post_like
+        .col-md-2
+            %i{:class => "far fa-thumbs-up icon_small"} 
+            %h3{:class => "post_like--count"} #{@post.liked_by.length}
+        .col-md-2
+            %i{:class => "far fa-comment icon_small"} 
+            %h3{:class => "post_like--count"} #{@post.comments.length}
+- elsif @post.liked_by.length > 0
+    .row.post_like
+        .col-md-2
+            %i{:class => "far fa-thumbs-up icon_small"} 
+            %h3{:class => "post_like--count"} #{@post.liked_by.length}
+-elsif @post.comments.length > 0
+    .row.post_like
+        .col-md-2
+            %i{:class => "far fa-comment icon_small"} 
+            %h3{:class => "post_like--count"} #{@post.comments.length}
+            
 .card-body.post_response
     .col-2.post_response--btn
         -if !current_user.likes.include?(@post)

@@ -3,8 +3,7 @@
         .card.post-response
             - if @post.image?
                 =image_tag @post.image.url(:large), class: "post_image"
-            = render 'like'
-    
+
     .col-md-4 
         .card.small-margin-bottom
             .card-body{:id => "#{@post.id}"}
@@ -13,10 +12,18 @@
                 .post_user--details
                     %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}     
                     %h6{:class => "card-subtitle"} #{time_ago_in_words(@post.created_at)} ago
-                %hr
-                = @post.body
-                %hr
-                = render '/comments/show'
-                = render '/comments/form'
+                %p{:class => "small-margin-top"} #{@post.body}
+                %hr{:class => "small-line"}
+                .post_user--count
+                    .col-md-3
+                        %i{:class => "far fa-thumbs-up icon_bio"} 
+                        %h3{:class => "small-font"} #{@post.liked_by.length}
+                    .col-md-3
+                        %i{:class => "far fa-comment icon_bio"} 
+                        %h3{:class => "small-font"} #{@post.comments.length}
+                %hr{:class => "small-line"}
+                .small-margin-top
+                    = render '/comments/show'
+                    = render '/comments/form'
         
 
