@@ -1,0 +1,13 @@
+.profile_banner{:style => "background-image: url(#{@user.banner.url})"}
+    = render 'profile-banner'
+
+.profile_info.small-margin-top
+    .col-md-4.profile_info--column
+        .card
+            .card-body.profile_info--bio
+                =render 'edit-form'
+    .col-md-8
+        .card.small-margin-bottom
+            %h3{:class => "post_title"} Create Post
+            =render 'posts/form'
+        =render 'posts/posts'

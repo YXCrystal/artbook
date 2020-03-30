@@ -1,0 +1,7 @@
+=form_for(@user) do |f|
+    =f.text_area :bio, placeholder: "Tell people about yourself", class: 'profile_edit profile_edit--textarea'
+    %hr
+    =f.date_field :birthday, class: 'profile_edit'
+    =f.text_field :location, placeholder: "Location", class: 'profile_edit'
+    =f.text_field :site, placeholder: "Site", class: 'profile_edit small-margin-bottom'
+    =f.submit :Update, class: "form_btn form_btn--fill"

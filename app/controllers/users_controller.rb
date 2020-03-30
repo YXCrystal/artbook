@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:index, :show, :edit_header, :update]
-    before_action :find_user_posts, only: [:index, :show]
+    before_action :find_user
+    before_action :find_user_posts, only: [:index, :show, :edit_info]
 
     def index
         @user = User.find_by(id: current_user)
@@ -11,8 +11,9 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             flash.notice = "Profile has been updated"
             redirect_to user_path(current_user.id)
-        else 
-            redirect_to 'edit'
+        else
+            flash.notice = "Profile cannot be updated"
+            redirect_to user_path(current_user.id)
         end
     end
 
@@ -21,6 +22,10 @@ class UsersController < ApplicationController
     end
     
     def edit_header
+    end
+
+    def edit_info
+        @post = Post.new
     end
 
     private

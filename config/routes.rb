@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :profile, controller: "users", as: "users" do 
     member do 
       get "edit_header"
+      get "edit_info"
     end
 
     resources :posts, only: [:new, :create, :show] 
