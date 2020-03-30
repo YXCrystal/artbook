@@ -111,6 +111,11 @@
         margin: 0.5rem;
         white-space: nowrap;
     }
+
+    &--tiny {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+    }
 }
 
 .icon {

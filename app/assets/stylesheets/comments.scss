@@ -1,3 +1,28 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "utilities/variables";
+
+.comment_form {
+    margin-top: 1rem;
+
+    &--field {
+        width: 70%
+    }
+
+}
+
+.comment_text {
+    background-color: $lightest-grey;
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+
+    &--author {
+        color: $dark-purple;
+        font-weight: bold;
+    }
+}

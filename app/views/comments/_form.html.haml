@@ -1,0 +1,4 @@
+=form_for([@post, @post.comments.build]) do |f|
+    .comment_form
+        =f.text_field :body, placeholder: "Write a comment", class: 'comment_form--field'
+        =f.submit :Submit, class: 'form_btn form_btn--tiny'

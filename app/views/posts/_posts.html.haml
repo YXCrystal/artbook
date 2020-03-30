@@ -12,7 +12,6 @@
         .card-text
             - if p.image?
                 =image_tag p.image.url(:large), class: "post_image"
-        .card-body.post_response
             - @post = p
             = render '/posts/like'
             

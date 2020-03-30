@@ -1,10 +1,9 @@
 .row.small-margin-top
     .col-md-8
-        .card
-            .post-response
-                - if @post.image?
-                    =image_tag @post.image.url(:large), class: "post_image"
-                = render 'like'
+        .card.post-response
+            - if @post.image?
+                =image_tag @post.image.url(:large), class: "post_image"
+            = render 'like'
     
     .col-md-4 
         .card.small-margin-bottom
@@ -16,5 +15,8 @@
                     %h6{:class => "card-subtitle"} #{time_ago_in_words(@post.created_at)} ago
                 %hr
                 = @post.body
+                %hr
+                = render '/comments/show'
+                = render '/comments/form'
         
 
