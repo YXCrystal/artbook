@@ -154,4 +154,18 @@
     &--btn {
         font-size: 1.2rem;
     }
+
+    
+}
+
+.profile_edit {
+    width: 100%;
+    margin: 0.5rem 0;
+    color: $dark-grey;
+
+    &--textarea {
+        height: 10rem;
+        padding: 0.5rem 1rem;
+        border: none;
+    }
 }
