@@ -1,2 +1,7 @@
 .profile_banner{:style => "background-image: url(#{@user.banner.url})"}
     = render 'profile-banner'
+.card.small-margin-top.small-margin-bottom
+    .card-body.photos_grid
+        -@posts.each do |post| 
+            .col-md-3
+                =image_tag post.image.url, class: "photos_grid--photo"

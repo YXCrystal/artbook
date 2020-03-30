@@ -131,6 +131,7 @@
     width: 10rem;
     height: 10rem;
     bottom: 8rem;
+    border: 3px solid white;
     border-radius: 50%;
     margin-left: 2rem;
     position: relative;
@@ -175,5 +176,21 @@
         height: 10rem;
         padding: 0.5rem 1rem;
         border: none;
+    }
+}
+
+/* --- User photo page --- */ 
+
+.photos_grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+    &--photo {
+    width: 14rem;
+    height: 12rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
     }
 }
