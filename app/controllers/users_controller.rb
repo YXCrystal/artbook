@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user
-    before_action :find_user_posts, only: [:index, :show, :edit_info]
+    before_action :find_user_posts
 
     def index
         @user = User.find_by(id: current_user)
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     end
     
     def edit_header
+        @post = Post.new
     end
 
     def edit_info

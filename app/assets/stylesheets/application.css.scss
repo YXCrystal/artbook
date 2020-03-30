@@ -51,6 +51,10 @@
     margin-top: 3rem;
 }
 
+.large-margin-top {
+    margin-top: 19rem;
+}
+
 .small-margin-bottom {
     margin-bottom: 2rem;
 }
@@ -99,7 +103,6 @@
     font-size: 1.2rem;
     border: none;
     padding: 0.2rem 1rem;
-
 
     &:hover {
         background-color: $dark-purple;

@@ -58,10 +58,13 @@
     &_title {
         color: white;
         width: 100%;
-        background-color: rgba($deep-purple, 0.7
+        background-color: rgba($deep-purple, 0.5
         );
         opacity: 0.8;
         padding: 0.3rem;
+        z-index: 0;
+        position: absolute;
+        height: 90%;
         text-align: center;
     }
 
@@ -69,13 +72,17 @@
         color: white;
         text-shadow: 1px 1px 3px rgba($deep-purple, 0.8);
         margin-left: 0.5rem;
+        margin-top: 3.5rem;
+        z-index: 1;
+        position: relative;
 
         &--btn {
-            color: white;
-            background-color: $medium-purple;
-            display: block;
-            padding: 0.3rem 2.1rem;
-            margin-top: 0.5rem;
+            z-index: 1;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin-bottom: 3rem;
+            margin-right: 0.5rem;
         }
 
     }
@@ -128,6 +135,7 @@
     margin-left: 2rem;
     position: relative;
     flex: none;
+    z-index: 1;
 
     &_upload {
         color: white;
