@@ -74,6 +74,20 @@
     }
 }
 
+.post_like {
+    background-color: $dark-purple;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px dotted white;
+
+    &--count {
+        margin: 0;
+        font-size: 1.3rem;
+        color: white;
+        padding-bottom: 0.5rem;
+
+    }
+}
+
 .post_upload {
     display: inline-block;
     margin-left: 5rem;

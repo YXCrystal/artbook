@@ -5,13 +5,32 @@
                 =image_tag @user.avatar.url, class: "post_user--avatar"
                 .post_user--details
                     %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}
-                    
                     %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)} ago
             %hr
             = p.body
         .card-text
             - if p.image?
-                =image_tag p.image.url(:large), class: "post_image"
+                =link_to post_path(p.id) do 
+                    =image_tag p.image.url(:large), class: "post_image"
             - @post = p
+            
+            - if @post.liked_by.length > 0 && @post.comments.length > 0
+                .row.post_like
+                    .col-md-2
+                        %i{:class => "far fa-thumbs-up icon_small"} 
+                        %h3{:class => "post_like--count"} #{@post.liked_by.length}
+                    .col-md-2
+                        %i{:class => "far fa-comment icon_small"} 
+                        %h3{:class => "post_like--count"} #{@post.comments.length}
+            - elsif @post.liked_by.length > 0
+                .row.post_like
+                    .col-md-2
+                        %i{:class => "far fa-thumbs-up icon_small"} 
+                        %h3{:class => "post_like--count"} #{@post.liked_by.length}
+            -elsif @post.comments.length > 0
+                .row.post_like
+                    .col-md-2
+                        %i{:class => "far fa-comment icon_small"} 
+                        %h3{:class => "post_like--count"} #{@post.comments.length}
             = render '/posts/like'
             
