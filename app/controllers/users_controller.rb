@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:index, :show, :edit_header, :update]
+    before_action :find_user_posts, only: [:index, :show]
+
     def index
         @user = User.find_by(id: current_user)
         @post = Post.new
-        @posts = Post.all.where(user_id: current_user.id)
     end
 
     def update
@@ -17,13 +18,16 @@ class UsersController < ApplicationController
 
     def show
         @post = Post.new
-        @posts = Post.all.where(user_id: current_user.id)
     end
     
     def edit_header
     end
 
     private
+
+    def find_user_posts
+        @posts = Post.all.where(user_id: current_user.id).order(created_at: :DESC)
+    end
 
     def find_user
         @user = User.find_by(id: current_user.id)

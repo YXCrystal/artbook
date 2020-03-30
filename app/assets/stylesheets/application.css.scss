@@ -90,9 +90,6 @@
 }
 
 /* --- Buttons --- */
-.btn_form {
-
-}
 
 .form_btn {
     background-color: $dark-purple;
@@ -115,6 +112,7 @@
     &--tiny {
         padding: 0.2rem 1rem;
         font-size: 1rem;
+        border: none;
     }
 }
 
