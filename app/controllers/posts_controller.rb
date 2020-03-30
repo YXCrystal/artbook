@@ -9,10 +9,10 @@ class PostsController < ApplicationController
         @post.user_id = current_user.id
         if @post.save 
             flash[:notice] = "Successfully posted!"
-            redirect_to '/profile'
+            redirect_back(fallback_location: root_path)
         else 
             flash[:error] = "Something went wrong, please try again later."
-            render 'new'
+            redirect_back(fallback_location: root_path)
         end
     end
 
