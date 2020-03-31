@@ -17,7 +17,6 @@ class PostsController < ApplicationController
         @user = User.find_by(id: @post.user_id)
         @comment = Comment.new
         @comments = Comment.all.where(post_id: @post.id)
-
     end
     
     def like

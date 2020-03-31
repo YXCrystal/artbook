@@ -1,0 +1,11 @@
+.card.small-margin-top.small-margin-bottom
+    .purple_heading
+        %h1 Photos
+    .card-body.photos_grid
+        - if !@user.posts.empty?
+            -@posts.each do |post| 
+                .col-md-3
+                    =link_to(post_path(post)) do 
+                        =image_tag post.image.url, class: "photos_grid--photo"
+        - else 
+            %h1{:class => "tertiary"} There are no photos here...
