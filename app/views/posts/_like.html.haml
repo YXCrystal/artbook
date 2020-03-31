@@ -1,3 +1,5 @@
+// --- like/comment count --- \\             
+
 - if @post.liked_by.length > 0 && @post.comments.length > 0
     .row.post_like
         .col-md-2
@@ -16,7 +18,8 @@
         .col-md-2
             %i{:class => "far fa-comment icon_small"} 
             %h3{:class => "post_like--count"} #{@post.comments.length}
-            
+
+// ---  like/comment/share buttons --- \\             
 .card-body.post_response
     .col-2.post_response--btn
         -if !current_user.likes.include?(@post)
@@ -30,7 +33,8 @@
             %p{:class => "link_white post_response--text"} #{type}
     .col-3.post_response--btn.small-padding-left
         %i{:class => "far fa-comment icon_small"} 
-        %p{:class => "post_response--text"} Comment
+        =link_to(post_path(@post)) do 
+            %p{:class => "link_white post_response--text"} Comment
     .col-2.post_response--btn
         %i{:class => "far fa-share-square icon_small"} 
         %p{:class => "post_response--text"} Share
