@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    # before_action :find_other_user, only: [:show]
-    before_action :find_user
-    before_action :find_user_posts
+    before_action :find_other_user, only: [:show]
+    before_action :find_user, except: [:show]
+    before_action :find_user_posts, except: [:show]
     before_action :new_post, only: [:show, :edit_header, :edit_info]
 
     def index
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        @posts = Post.all.where(user_id: params[:id]).order(created_at: :DESC)
     end
     
     def edit_header
