@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    # before_action :find_other_user, only: [:show]
     before_action :find_user
     before_action :find_user_posts
     before_action :new_post, only: [:show, :edit_header, :edit_info]
@@ -6,6 +7,10 @@ class UsersController < ApplicationController
     def index
         @user = User.find_by(id: current_user)
         @post = Post.new
+    end
+
+    def artist
+        @user = User.find(params[:id])
     end
 
     def update
@@ -34,6 +39,10 @@ class UsersController < ApplicationController
     end
 
     private
+
+    def find_other_user
+        @user = User.find(params[:id])
+    end
 
     def new_post
         @post = Post.new

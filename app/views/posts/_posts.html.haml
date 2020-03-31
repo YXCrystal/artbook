@@ -5,7 +5,8 @@
             .post_user
                 =image_tag @user.avatar.url, class: "post_user--avatar"
                 .post_user--details
-                    %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}
+                    =link_to(artist_path(@user.id), class: "link_purple") do 
+                        %h5{:class => "card-title"} #{@user.first_name} #{@user.last_name}
                     %h6{:class => "card-subtitle"} #{time_ago_in_words(p.created_at)} ago
             %hr
             = p.body

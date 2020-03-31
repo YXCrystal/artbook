@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   resources :profile, controller: "users", as: "users" do 
     member do 
       get "edit_header"
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:new, :create, :show] 
       
   end
+
+  match '/artist/:id', to: "users#show", as: "artist", via: "get"
 
   resources :posts, only: [:show] do 
     put "like", on: :member
