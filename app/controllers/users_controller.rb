@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
-    before_action :find_other_user, only: [:show]
+    before_action :find_other_user, only: [:show, :update]
     before_action :find_user, except: [:show]
     before_action :find_user_posts, except: [:show]
     before_action :new_post, only: [:show, :edit_header, :edit_info]
-    before_action :authenticate_user!, only: [:update, :edit_header, :edit_info]
+    before_action :authenticate_user!, only: [:edit_header, :edit_info]
 
     def index
         @user = User.find_by(id: current_user)
         @post = Post.new
-    end
-
-    def artist
-        @user = User.find(params[:id])
     end
 
     def update
@@ -59,7 +55,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.permit(:first_name, :last_name, :birthday, :bio, :location, :site, :avatar, :banner)
+        params.require(:user).permit(:first_name, :last_name, :birthday, :bio, :location, :site, :avatar, :banner)
     end
 
 end
