@@ -5,10 +5,12 @@
             .card-body.profile_info--bio
                 = render 'bio'
                 .small-margin-top
-                    =link_to "Edit Details", edit_info_user_path(@user.id), class: "form_btn form_btn--fill"
+                    - if @user == current_user
+                        =link_to "Edit Details", edit_info_user_path(@user.id), class: "form_btn form_btn--fill"
     .col-md-8
-        .card.small-margin-bottom
-            %h3{:class => "post_title"} Create Post
-            =render 'posts/form'
+        - if @user == current_user
+            .card.small-margin-bottom
+                %h3{:class => "post_title"} Create Post
+                =render 'posts/form'
         =render 'posts/posts'
         

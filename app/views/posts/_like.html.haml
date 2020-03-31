@@ -2,21 +2,21 @@
 
 - if @post.liked_by.length > 0 && @post.comments.length > 0
     .row.post_like
-        .col-md-2
-            %i{:class => "far fa-thumbs-up icon_small"} 
+        .col-md-1.nowrap.tiny-margin-right
+            %i{:class => "far fa-thumbs-up icon_tiny"} 
             %h3{:class => "post_like--count"} #{@post.liked_by.length}
-        .col-md-2
-            %i{:class => "far fa-comment icon_small"} 
+        .col-md-1.nowrap
+            %i{:class => "far fa-comment icon_tiny"} 
             %h3{:class => "post_like--count"} #{@post.comments.length}
 - elsif @post.liked_by.length > 0
     .row.post_like
-        .col-md-2
-            %i{:class => "far fa-thumbs-up icon_small"} 
+        .col-md-1.nowrap
+            %i{:class => "far fa-thumbs-up icon_tiny"} 
             %h3{:class => "post_like--count"} #{@post.liked_by.length}
 -elsif @post.comments.length > 0
     .row.post_like
-        .col-md-2
-            %i{:class => "far fa-comment icon_small"} 
+        .col-md-1.nowrap
+            %i{:class => "far fa-comment icon_tiny"} 
             %h3{:class => "post_like--count"} #{@post.comments.length}
 
 // ---  like/comment/share buttons --- \\             
