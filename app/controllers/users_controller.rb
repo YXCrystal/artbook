@@ -30,6 +30,9 @@ class UsersController < ApplicationController
     def photos
     end
 
+    def about
+    end
+
     private
 
     def new_post

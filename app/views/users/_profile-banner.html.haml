@@ -7,7 +7,7 @@
     .col-md-2.heading_column
         =link_to "Timeline", user_path(@user.id), class: "heading_column--links"
     .col-md-2.heading_column
-        =link_to "About", '/', class: "heading_column--links"
+        =link_to "About", about_user_path(@user.id), class: "heading_column--links"
     .col-md-2.heading_column
         =link_to "Friends", '/', class: "heading_column--links"
     .col-md-2.heading_column

@@ -3,21 +3,9 @@
     .col-md-4.profile_info--column
         .card
             .card-body.profile_info--bio
-                - if @user.bio
-                    %p #{@user.bio}
-                - else 
-                    %p #{@user.first_name} #{@user.last_name}
-                %hr
-                %i{:class => "fas fa-birthday-cake icon_bio"}
-                %p #{@user.birthday.strftime("%B %d, %Y")}
-                - if @user.location
-                    %i{:class => "fas fa-compass icon_bio"}
-                    %p #{@user.location}
-                - if @user.site
-                    %i{:class => "fas fa-link icon_bio"}
-                    =link_to @user.site, "http://#{@user.site}", class: "link_bio"
+                = render 'bio'
                 .small-margin-top
-                =link_to "Edit Details", edit_info_user_path(@user.id), class: "form_btn form_btn--fill"
+                    =link_to "Edit Details", edit_info_user_path(@user.id), class: "form_btn form_btn--fill"
     .col-md-8
         .card.small-margin-bottom
             %h3{:class => "post_title"} Create Post
