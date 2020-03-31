@@ -14,9 +14,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:new, :create, :show] 
       
   end
-
-  match '/artist/:id', to: "users#show", as: "artist", via: "get"
-
+  
   resources :posts, only: [:show] do 
     put "like", on: :member
     resources :comments, only: [:new, :create]
