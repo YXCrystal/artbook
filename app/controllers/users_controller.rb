@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :find_other_user, only: [:show, :update]
+    before_action :find_other_user, only: [:show, :update, :friends]
     before_action :find_user, except: [:show]
     before_action :find_user_posts, except: [:show]
     before_action :new_post, only: [:show, :edit_header, :edit_info]
@@ -34,6 +34,9 @@ class UsersController < ApplicationController
     end
 
     def about
+    end
+
+    def friends
     end
 
     private
