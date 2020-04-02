@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     put "like", on: :member
     resources :comments, only: [:new, :create]
   end
+
+  resources :friendships, only: [:show, :create, :destroy]
   
   authenticated :user do 
     root "users#index", as: "authenticated_root"
