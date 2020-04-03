@@ -11,11 +11,11 @@ Rails.application.routes.draw do
       get "friends"
     end
 
-    resources :posts, only: [:new, :create, :show] 
+    resources :posts, only: [:new, :create, :show]
       
   end
   
-  resources :posts, only: [:show] do 
+  resources :posts, only: [:show, :edit, :update, :delete] do 
     put "like", on: :member
     resources :comments, only: [:new, :create]
   end

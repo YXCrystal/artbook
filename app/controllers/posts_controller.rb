@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    
+
     def create
         @post = Post.create(post_params)
         @post.user_id = current_user.id
@@ -17,6 +17,32 @@ class PostsController < ApplicationController
         @user = User.find_by(id: @post.user_id)
         @comment = Comment.new
         @comments = Comment.all.where(post_id: @post.id)
+    end
+
+    def edit
+        @post = Post.find_by(id: params[:id])
+
+        if @post.user_id == current_user.id
+            @post = Post.find_by(id: params[:id])
+        else 
+            redirect_to @post
+        end
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        @post.update(post_params)
+        if @post.user_id == current_user.id
+            if @post.save 
+                flash[:notice] = "Successfully updated post"
+                redirect_to @post
+            else 
+                flash[:error] = "Unable to update post"
+                redirect_to @post
+            end
+        else 
+            redirect_to @post
+        end
     end
     
     def like

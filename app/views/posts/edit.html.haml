@@ -1,0 +1,15 @@
+.row 
+    .col-md-3
+    .col-md-6
+        .card.small-margin-top.small-margin-bottom
+            .purple_heading
+                %h2 Editing Post
+            .post_form
+                =form_for(@post) do |f|
+                    =f.text_area :body, rows: "5", class: "post_body"
+                    .card-text
+                        - if @post.image?
+                            =image_tag @post.image.url, class: "post_image"
+                    =f.submit :Update, class: "post_btn no-margin"
+
+

@@ -23,6 +23,7 @@
 
     &--details {
         transform: translateX(3.5rem);
+        width: 40%;
 
     }
 
@@ -105,6 +106,14 @@
         margin-top: 0.4rem;
     }
 
+}
+
+.post_buttons {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-right: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
