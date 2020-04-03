@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  has_many :friends_posts, through: :friends, source: :posts
 
   has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/default-profile.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/

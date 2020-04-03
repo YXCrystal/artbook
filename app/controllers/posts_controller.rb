@@ -37,7 +37,7 @@ class PostsController < ApplicationController
             redirect_back(fallback_location: root_path)
         else 
             @parameter = params[:search].downcase 
-            @posts = Post.all.where("lower(body) LIKE :search", search: "%#{@parameter}%")
+            @posts = Post.all.where("lower(body) LIKE :search", search: "%#{@parameter}%").order(created_at: :DESC)
         end
     end
 

@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
     before_action :find_other_user, only: [:photos, :about, :friends]
     before_action :find_user, only: [:index, :update, :edit_header, :edit_info]
-    before_action :find_user_posts, except: [:show]
+    before_action :find_user_posts, except: [:show, :index]
     before_action :new_post, only: [:show, :edit_header, :edit_info]
     before_action :authenticate_user!, only: [:edit_header, :edit_info]
 
     def index
         @user = User.find_by(id: current_user)
+        @user_posts = Post.all.where(user_id: current_user.id)
+        @combine_posts = @user_posts + @user.friends_posts
+        @posts = @combine_posts.sort.reverse
         @post = Post.new
     end
 
