@@ -3,6 +3,10 @@
     - @user = User.find_by(id: p.user_id)
     .card.small-margin-bottom
         .card-body{:id => "#{p.id}"}
+            - if p.user_id == current_user.id
+                .to_right.small-margin-right
+                    =link_to "Edit", "/", class: "btn form_btn form_btn--tiny"
+                    =link_to "Delete", "/", class: "btn form_btn form_btn--tiny"
             .post_user
                 =image_tag @user.avatar.url, class: "post_user--avatar"
                 .post_user--details
