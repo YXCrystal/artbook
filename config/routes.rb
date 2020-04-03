@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   get '/search', to: "posts#search"
+  get '/artists', to: "users#artists"
 
   resources :friendships, only: [:show, :create, :destroy]
   

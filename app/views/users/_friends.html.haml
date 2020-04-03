@@ -1,15 +1,12 @@
-.card.small-margin-top.small-margin-bottom
-    .purple_heading
-        %h2 Friends (#{@user.friendships.length})
-    .card-body.friend_grid
-        - if !@user.friendships.empty?
-            -@user.friendships.each do |user| 
-                - friend = User.find_by(id: user.friend_id)
-                .col-md-3
-                    =link_to(users_path(user)) do
-                        .card
-                            .card-body.friend_grid--card
-                                =image_tag friend.avatar.url, class: "friend_grid--photo"
-                                %h5{:class => "small-font center_text"} #{friend.first_name} #{friend.last_name}
-        - else 
-            %h1{:class => "tertiary"} No friends found...
+.card-body.friend_grid.row
+    - if !@user.friendships.empty?
+        -@user.friendships.each do |user| 
+            - friend = User.find_by(id: user.friend_id)
+            .col-md-3
+                =link_to(user_path(user.friend_id)) do
+                    .card
+                        .card-body.friend_grid--card
+                            =image_tag friend.avatar.url, class: "friend_grid--photo"
+                            %h5{:class => "small-font center_text"} #{friend.first_name} #{friend.last_name}
+    - else 
+        %h1{:class => "tertiary"} No friends found...

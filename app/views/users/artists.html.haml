@@ -1,0 +1,11 @@
+.card.small-margin-top.small-margin-bottom
+    .purple_heading
+        %h2 Artists
+    .card-body.row
+        - @users.each do |user|
+            .col-md-3
+                =link_to(user_path(user)) do
+                    .card
+                        .card-body.friend_grid--card
+                            =image_tag user.avatar.url, class: "friend_grid--photo"
+                            %h5{:class => "small-font center_text"} #{user.first_name} #{user.last_name}

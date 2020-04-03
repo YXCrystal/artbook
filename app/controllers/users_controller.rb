@@ -43,6 +43,10 @@ class UsersController < ApplicationController
     def friends
     end
 
+    def artists
+        @users = User.all
+    end
+
     private
 
     def find_other_user

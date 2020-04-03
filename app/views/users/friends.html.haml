@@ -1,3 +1,6 @@
 .profile_banner{:style => "background-image: url(#{@user.banner.url})"}
     = render 'profile-banner'
-= render 'friends'
+.card.small-margin-top.small-margin-bottom
+    .purple_heading
+        %h2 Friends (#{@user.friendships.length})
+    = render 'friends'

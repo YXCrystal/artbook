@@ -7,5 +7,12 @@
     .card-body.profile_info--bio
         = render 'bio'
 
-= render 'photos'
-= render 'friends'
+.card.small-margin-top.small-margin-bottom
+    .purple_heading
+        %h2 Photos
+    = render 'photos'
+
+.card.small-margin-top.small-margin-bottom
+    .purple_heading
+        %h2 Friends (#{@user.friendships.length})
+    = render 'friends'
