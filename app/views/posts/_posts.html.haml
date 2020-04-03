@@ -1,5 +1,6 @@
 // --- Posts --- \\ 
 - @posts.each do |p|
+    - @user = User.find_by(id: p.user_id)
     .card.small-margin-bottom
         .card-body{:id => "#{p.id}"}
             .post_user

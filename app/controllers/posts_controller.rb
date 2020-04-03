@@ -31,6 +31,16 @@ class PostsController < ApplicationController
         end
     end
 
+    def search
+        if params[:search].blank?
+            flash[:notice] = "Empty Field"
+            redirect_back(fallback_location: root_path)
+        else 
+            @parameter = params[:search].downcase 
+            @posts = Post.all.where("lower(body) LIKE :search", search: "%#{@parameter}%")
+        end
+    end
+
     private 
     
     def post_params

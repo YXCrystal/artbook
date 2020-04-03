@@ -3,10 +3,10 @@
         %a{:class => "navbar-brand medium-font", :href => "/"}
             Artbook
         %ul{:class => "navbar-nav mr-auto"}
-            =form_for('/') do |f|
+            =form_tag(search_path, :method => "get") do 
                 %li{:class => "medium-margin-right"}
-                    =f.text_field :name, class: 'nav-field'
-                    =f.button :submit, class: 'icon_btn' do
+                    =search_field_tag :search, params[:search], placeholder: "Find Inspiration", class: 'nav-field'
+                    =button_tag :submit, class: 'icon_btn' do
                         %i{:class => "fas fa-search icon_search"}
                 
             %li{:class => "nav-item"}

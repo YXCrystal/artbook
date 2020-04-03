@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
+  get '/search', to: "posts#search"
+
   resources :friendships, only: [:show, :create, :destroy]
   
   authenticated :user do 
