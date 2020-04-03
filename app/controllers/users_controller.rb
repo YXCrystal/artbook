@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     before_action :find_other_user, only: [:photos, :about, :friends]
     before_action :find_user, only: [:index, :update, :edit_header, :edit_info]
-    before_action :find_user_posts, except: [:show, :index]
+    before_action :find_user_posts, except: [:show, :index, :photos, :about]
+    before_action :find_other_user_posts, only: [:photos, :about]
     before_action :new_post, only: [:show, :edit_header, :edit_info]
     before_action :authenticate_user!, only: [:edit_header, :edit_info]
 
@@ -59,6 +60,10 @@ class UsersController < ApplicationController
 
     def find_user_posts
         @posts = Post.all.where(user_id: current_user.id).order(created_at: :DESC)
+    end
+
+    def find_other_user_posts
+        @posts = Post.all.where(user_id: params[:id]).order(created_at: :DESC)
     end
 
     def find_user
