@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+    before_action :find_post, except: [:create]
     def create
         @post = Post.create(post_params)
         @post.user_id = current_user.id
@@ -13,15 +13,12 @@ class PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find_by(id: params[:id])
         @user = User.find_by(id: @post.user_id)
         @comment = Comment.new
         @comments = Comment.all.where(post_id: @post.id)
     end
 
     def edit
-        @post = Post.find_by(id: params[:id])
-
         if @post.user_id == current_user.id
             @post = Post.find_by(id: params[:id])
         else 
@@ -30,7 +27,6 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post = Post.find(params[:id])
         @post.update(post_params)
         if @post.user_id == current_user.id
             if @post.save 
@@ -43,6 +39,11 @@ class PostsController < ApplicationController
         else 
             redirect_to @post
         end
+    end
+
+    def destroy
+        @post.destroy 
+        redirect_back(fallback_location: root_path)
     end
     
     def like
@@ -69,6 +70,10 @@ class PostsController < ApplicationController
 
     private 
     
+    def find_post
+        @post = Post.find(params[:id])
+    end
+
     def post_params
         params.require(:post).permit(:body, :image)
     end

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       
   end
   
-  resources :posts, only: [:show, :edit, :update, :delete] do 
+  resources :posts, only: [:show, :edit, :update, :destroy] do 
     put "like", on: :member
     resources :comments, only: [:new, :create]
   end

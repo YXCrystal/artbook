@@ -5,7 +5,7 @@
         - if p.user_id == current_user.id
             .post_buttons
                 =link_to "Edit", edit_post_path(p.id), class: "btn form_btn form_btn--tiny"
-                =link_to "Delete", "/", class: "btn form_btn form_btn--tiny"
+                =link_to "Delete", post_path(p.id), method: :delete, data: {confirm: "Are you sure you want to delete this post?"}, class: "btn form_btn form_btn--tiny"
         .card-body{:id => "#{p.id}"}
             .post_user
                 =image_tag @user.avatar.url, class: "post_user--avatar"
