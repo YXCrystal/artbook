@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :posts
-  has_many :like_posts
+  has_many :posts, dependent: :destroy
+  has_many :like_posts, dependent: :destroy
   has_many :likes, through: :like_posts, source: :post
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
   has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/default-profile.jpg"
