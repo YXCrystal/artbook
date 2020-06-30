@@ -1,4 +1,7 @@
-// --- Posts --- \\ 
+// --- Posts --- \\
+
+- if @posts.length === 0 
+    %h2 No results ...
 - @posts.each do |p|
     - @user = User.find_by(id: p.user_id)
     .card.small-margin-bottom

@@ -3,12 +3,24 @@
     .col-3
         .card
             .card-body 
-                %h1 Some text here 
+                %i{:class => "fas fa-paint-brush icon_bio"}
+                =link_to "Artist Feed", "/", class: "link_bio"
+                %hr
+                %i{:class => "far fa-thumbs-up icon_bio"}
+                =link_to "Likes", "/", class: "link_bio"
+                %hr
+                %i{:class => "fas fa-shopping-cart icon_bio"}
+                =link_to "Marketplace", "/", class: "link_bio"
+                %hr
+                %i{:class => "fas fa-envelope icon_bio"}
+                =link_to "Direct Messages", "/", class: "link_bio"
     .col-6
         = render "posts"
         
     .col-3
         .card
             .card-body 
-                %h1 Some other text
+                %p{:class => "primary"} Welcome to Artbook
+                %hr
+                %p Discover artists and find inspiration!
 
