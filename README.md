@@ -15,7 +15,7 @@ Artbook is a social media app that is inspired by Facebook. Artbook is built usi
 
 ![Newsfeed for artbook](app/assets/images/newsfeed.jpg)
 
-- Able to see posts on newsfeed from friends in chronological order from when it was posted
+- Able to see posts on newsfeed from friends in order from newest to oldest
 
 ### User Profile
 
